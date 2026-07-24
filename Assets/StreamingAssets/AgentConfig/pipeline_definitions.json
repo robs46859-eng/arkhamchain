@@ -1,0 +1,131 @@
+{
+  "version": "0.1.0-scaffold",
+  "pipelines": [
+    {
+      "pipeline_name": "world",
+      "display_name": "Map & World Design",
+      "description": "Real-World Data → Lovecraftian VR. Transforms geospatial data into horror terrain with valid physics.",
+      "chain": [
+        {
+          "agent_id": "map_design_agent",
+          "role": "head",
+          "temperature": 1.0
+        },
+        {
+          "agent_id": "physics_mesh_anchor_agent",
+          "role": "terminal",
+          "temperature": 0.1
+        }
+      ],
+      "trigger_sources": ["IslandSegmentProcessor", "MapEditor"],
+      "output_targets": ["NavMesh", "CollisionPrimitives", "TriggerVolumes"]
+    },
+    {
+      "pipeline_name": "character",
+      "display_name": "Character & Mechanics",
+      "description": "Concept → VR Biometrics. Creates uncanny character archetypes with functional IK rigs.",
+      "chain": [
+        {
+          "agent_id": "character_picker_agent",
+          "role": "head",
+          "temperature": 0.95
+        },
+        {
+          "agent_id": "pc_engineer_agent",
+          "role": "terminal",
+          "temperature": 0.25
+        }
+      ],
+      "trigger_sources": ["CharacterCreation", "NarrativeEvents"],
+      "output_targets": ["VRIKRig", "BiometricsMatrix", "ProgressionCurves"]
+    },
+    {
+      "pipeline_name": "narrative",
+      "display_name": "Narrative & Sanity Mechanics",
+      "description": "Sanity thresholds → hallucination events → safe quest-guarded execution.",
+      "chain": [
+        {
+          "agent_id": "cosmic_mythos_weaver_agent",
+          "role": "head",
+          "temperature": 1.0
+        },
+        {
+          "agent_id": "sanity_engine_anchor_agent",
+          "role": "terminal",
+          "temperature": 0.15
+        }
+      ],
+      "trigger_sources": ["SanitySystem"],
+      "output_targets": ["HallucinationSystem", "AudioChannels", "QuestStateMachine"]
+    },
+    {
+      "pipeline_name": "audio",
+      "display_name": "Dynamic VR Spatial Audio",
+      "description": "Impossible soundscapes → HRTF-spatialized VR audio without nausea.",
+      "chain": [
+        {
+          "agent_id": "psychoacoustic_weaver_agent",
+          "role": "head",
+          "temperature": 0.85
+        },
+        {
+          "agent_id": "hrtf_spatial_audio_agent",
+          "role": "terminal",
+          "temperature": 0.1
+        }
+      ],
+      "trigger_sources": ["EnvironmentTriggers", "SanitySystem"],
+      "output_targets": ["AudioMixer", "SpatialAudioSources"]
+    },
+    {
+      "pipeline_name": "rendering",
+      "display_name": "VR Lighting, Atmosphere & Rendering",
+      "description": "Atmospheric dread → GPU-budget-compliant VR rendering.",
+      "chain": [
+        {
+          "agent_id": "atmosphere_director_agent",
+          "role": "head",
+          "temperature": 0.9
+        },
+        {
+          "agent_id": "vr_shader_optimization_agent",
+          "role": "terminal",
+          "temperature": 0.05
+        }
+      ],
+      "trigger_sources": ["ZoneTriggers", "NarrativeEvents"],
+      "output_targets": ["URPVolume", "LightProbes", "OcclusionData"]
+    },
+    {
+      "pipeline_name": "haptics",
+      "display_name": "VR Haptics & Interaction Mechanics",
+      "description": "Eldritch object concepts → safe dual-actuator haptic feedback.",
+      "chain": [
+        {
+          "agent_id": "eldritch_object_agent",
+          "role": "head",
+          "temperature": 0.9
+        },
+        {
+          "agent_id": "haptic_ergonomics_agent",
+          "role": "terminal",
+          "temperature": 0.2
+        }
+      ],
+      "trigger_sources": ["ObjectInteraction", "InventorySystem"],
+      "output_targets": ["ControllerHaptics", "HandTracking"]
+    }
+  ],
+  "global_constraints": {
+    "frame_budget_90hz_ms": 11.11,
+    "frame_budget_120hz_ms": 8.33,
+    "max_draw_calls": 150,
+    "max_triangles_per_eye": 1500000,
+    "vr_safety_flags": [
+      "no_vestibular_conflict",
+      "no_photosensitive_trigger",
+      "locomotion_comfort",
+      "haptic_strain_limit"
+    ]
+  }
+}

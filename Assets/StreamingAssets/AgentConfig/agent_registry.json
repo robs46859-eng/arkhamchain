@@ -1,0 +1,114 @@
+{
+  "version": "0.1.0-scaffold",
+  "architecture": "Thermal Cascade Why-Chain Agent Network",
+  "agents": [
+    {
+      "agent_id": "map_design_agent",
+      "agent_name": "MapDesignAgent",
+      "temperature": 1.0,
+      "tier": "hot",
+      "pipeline": "world",
+      "description": "Ingests real-world geospatial data and overwrites it with Lovecraftian lore.",
+      "downstream_agent": "physics_mesh_anchor_agent"
+    },
+    {
+      "agent_id": "physics_mesh_anchor_agent",
+      "agent_name": "PhysicsMeshAnchorAgent",
+      "temperature": 0.1,
+      "tier": "cool",
+      "pipeline": "world",
+      "description": "Converts chaotic visual concepts into stable engine geometry.",
+      "downstream_agent": null
+    },
+    {
+      "agent_id": "character_picker_agent",
+      "agent_name": "CharacterPickerAgent",
+      "temperature": 0.95,
+      "tier": "hot",
+      "pipeline": "character",
+      "description": "Selects and exaggerates playable character archetypes.",
+      "downstream_agent": "pc_engineer_agent"
+    },
+    {
+      "agent_id": "pc_engineer_agent",
+      "agent_name": "PCEngineerAgent",
+      "temperature": 0.25,
+      "tier": "cool",
+      "pipeline": "character",
+      "description": "Handles VRIK, biometric tracking, hitboxes, and progression math.",
+      "downstream_agent": null
+    },
+    {
+      "agent_id": "cosmic_mythos_weaver_agent",
+      "agent_name": "CosmicMythosWeaverAgent",
+      "temperature": 1.0,
+      "tier": "hot",
+      "pipeline": "narrative",
+      "description": "Generates surreal hallucinations when player sanity drops.",
+      "downstream_agent": "sanity_engine_anchor_agent"
+    },
+    {
+      "agent_id": "sanity_engine_anchor_agent",
+      "agent_name": "SanityEngineAnchorAgent",
+      "temperature": 0.15,
+      "tier": "cool",
+      "pipeline": "narrative",
+      "description": "Maps hallucinations to safe timed triggers without breaking quests.",
+      "downstream_agent": null
+    },
+    {
+      "agent_id": "psychoacoustic_weaver_agent",
+      "agent_name": "PsychoacousticWeaverAgent",
+      "temperature": 0.85,
+      "tier": "hot",
+      "pipeline": "audio",
+      "description": "Conceptualizes impossible soundscapes for cosmic horror.",
+      "downstream_agent": "hrtf_spatial_audio_agent"
+    },
+    {
+      "agent_id": "hrtf_spatial_audio_agent",
+      "agent_name": "HRTFSpatialAudioAgent",
+      "temperature": 0.1,
+      "tier": "cool",
+      "pipeline": "audio",
+      "description": "Spatializes sounds in VR without causing vestibular nausea.",
+      "downstream_agent": null
+    },
+    {
+      "agent_id": "atmosphere_director_agent",
+      "agent_name": "AtmosphereDirectorAgent",
+      "temperature": 0.9,
+      "tier": "hot",
+      "pipeline": "rendering",
+      "description": "Directs oppressive atmospheric lighting and fog.",
+      "downstream_agent": "vr_shader_optimization_agent"
+    },
+    {
+      "agent_id": "vr_shader_optimization_agent",
+      "agent_name": "VRShaderOptimizationAgent",
+      "temperature": 0.05,
+      "tier": "cool",
+      "pipeline": "rendering",
+      "description": "Guardian of the GPU budget. Foveated rendering, occlusion culling.",
+      "downstream_agent": null
+    },
+    {
+      "agent_id": "eldritch_object_agent",
+      "agent_name": "EldritchObjectAgent",
+      "temperature": 0.9,
+      "tier": "hot",
+      "pipeline": "haptics",
+      "description": "Conceptualizes tactile horror of eldritch objects.",
+      "downstream_agent": "haptic_ergonomics_agent"
+    },
+    {
+      "agent_id": "haptic_ergonomics_agent",
+      "agent_name": "HapticErgonomicsAgent",
+      "temperature": 0.2,
+      "tier": "cool",
+      "pipeline": "haptics",
+      "description": "Generates safe haptic motor curves for VR controllers.",
+      "downstream_agent": null
+    }
+  ]
+}
