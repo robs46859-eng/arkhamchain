@@ -3,6 +3,7 @@ using UnityEngine;
 namespace ArkhamIsland.GameSystems
 {
     using AgentFramework;
+    using Agents.Orchestration;
 
     /// <summary>
     /// PlayerStateEffectsCoordinator
